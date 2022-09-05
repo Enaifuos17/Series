@@ -1,0 +1,69 @@
+/* ----- Start Global Rules ----- */
+
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+:root {
+  --color1: #e6e6fa;
+  --color2: #d8bfd8;
+  --color3: #dda0dd;
+  --color4: #da70d6;
+  --color5: #ba55d3;
+  --color6: #9370db;
+  --color7: #8a2be2;
+  --color8: #9400d3;
+  --color9: #8b008b;
+  --color10: #800080;
+  --color11: #4b0082;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: auto;
+  margin-right: auto;
+  /* margin left and right auto ==> bash container yshd elements f center */
+}
+
+/* Small */
+/* Small Screen >= 768px */
+@media (min-width: 768px) {
+  .container {
+    width: 750px;
+  }
+}
+
+/* Medium */
+/* Medium >= 992px */
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+}
+
+/* Large */
+/* Large >= 1200px */
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
+  }
+}
+
+/* ----- End Global Rules ----- */
