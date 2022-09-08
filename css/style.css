@@ -7,17 +7,17 @@
 }
 
 :root {
-  --color1: #e6e6fa;
-  --color2: #d8bfd8;
-  --color3: #dda0dd;
-  --color4: #da70d6;
-  --color5: #ba55d3;
-  --color6: #9370db;
-  --color7: #8a2be2;
-  --color8: #9400d3;
-  --color9: #8b008b;
-  --color10: #800080;
-  --color11: #4b0082;
+  --ice-cold: #a0d2eb;
+  --ice-cold-2: #8bc6e4;
+  --freeze-purple: #e5eaf5;
+  --freeze-purple-2: #d3d4d6;
+  --freeze-yellow: #c6ca8c;
+  --medium-purple: #d0bdf4;
+  --medium-purple-2: #bea8e6;
+  --purple-pain: #8458b3;
+  --purple-pain-2: #4c1a83;
+  --heavy-purple: #a28089;
+  --dark: #494d5f;
 }
 
 html {
@@ -26,12 +26,17 @@ html {
 
 body {
   font-family: "Open Sans", sans-serif;
+  height: 3000px;
 }
 
 ul {
   list-style: none;
   margin: 0;
   padding: 0;
+}
+
+a {
+  text-decoration: none;
 }
 
 .container {
@@ -67,3 +72,155 @@ ul {
 }
 
 /* ----- End Global Rules ----- */
+
+/* ----- ----- ----- ----- ----- */
+
+/* ----- Start Scroll Button  ----- */
+
+#scrollBttn {
+  background: linear-gradient(to right, #e1dceb 50%, #fff 50%) no-repeat scroll
+    right bottom/210% 100% var(--freeze-purple);
+  /* background-color: var(--freeze-purple); */
+  padding: 10px 8px;
+  position: fixed;
+  bottom: 10px;
+  right: -40px;
+  /* border: 1px solid var(--dark); */
+  border: none;
+  border-top: 4px solid var(--medium-purple-2);
+  border-bottom: 4px solid var(--purple-pain);
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.2s linear;
+}
+
+#scrollBttn i {
+  color: var(--dark);
+  /* color: #000; */
+}
+
+/* #scrollBttn:hover {
+  background-color: var(--medium-purple-2);
+  color: #fff;
+} */
+
+#scrollBttn:hover {
+  background-position: left bottom;
+  border-bottom: 4px solid var(--medium-purple-2);
+  border-top: 4px solid var(--purple-pain);
+}
+
+#scrollBttn:hover i {
+  color: #000;
+}
+
+/* create a class to add it to the scrolling button */
+#scrollBttn.show {
+  right: 20px;
+}
+
+/* ----- End Scroll Button  ----- */
+
+/* ----- ----- ----- ----- ----- */
+
+/* ----- Start Header  ----- */
+
+.header {
+  background-color: #fff;
+  position: relative; /* mega menu mumkin ykun 3ndha positino absolute, so mumkin tkhrj ila madrnash relative hnaya */
+  -webkit-box-shadow: 0 0 10px var(--medium-purple);
+  -moz-box-shadow: 0 0 10px var(--medium-purple);
+  box-shadow: 0 0 10px var(--medium-purple);
+}
+
+.header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  /* ila makansh space ynzlu t7t b3dyathum */
+  position: relative;
+}
+
+.header .container .logo {
+  padding: 10px 0;
+  height: 73px;
+  /* drna height f logo 9d height dyl Header, bash ila traa shi changing f links, ghadi yb9a logo  */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.3s linear;
+  cursor: pointer;
+}
+
+/* ----- Media logo ----- */
+@media (max-width: 767px) {
+  .header .container .logo {
+    padding: 10px 0;
+    margin: auto;
+  }
+}
+
+.header .container .logo:hover {
+  transform: scale(1.1);
+}
+
+.header .container .main-nav {
+  display: flex;
+}
+
+/* ----- Media main-nav ----- */
+@media (max-width: 767px) {
+  .header .container .main-nav {
+    margin: auto;
+  }
+}
+
+/* direct child [a] of the direct child [li], to skip the mega menu problem */
+.header .container .main-nav > li > a {
+  display: flex;
+  justify-content: center;
+
+  align-items: center;
+  height: 73px;
+  position: relative;
+  /* bash n9ad before (that needs absolute as a position) */
+  color: #000;
+  padding: 0 30px;
+  transition: 0.3s linear;
+  /*  */
+  overflow: hidden;
+}
+
+/* ----- Media a ----- */
+@media (max-width: 767px) {
+  .header .container .main-nav > li > a {
+    font-size: 14px;
+    padding: 10px;
+    height: 40px;
+  }
+}
+
+.header .container .main-nav > li > a::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 4px;
+  background-color: var(--medium-purple-2);
+  top: 0;
+  /* bash tmshi before l Fuu9 */
+  left: -100%;
+  /* bash ytl33 brra, o mniin n9ssu mn -100% ghadi tb9a tbaan */
+  transition: 0.3s linear;
+}
+
+.header .container .main-nav > li > a:hover {
+  color: var(--purple-pain-2);
+  background-color: #fafafa;
+}
+
+.header .container .main-nav > li > a:hover::before {
+  left: 0;
+}
+
+/* ----- End Header  ----- */
