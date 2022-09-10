@@ -1,7 +1,7 @@
 // Scroll to Up
 
 let mySpan = document.querySelector("#scrollBttn");
-let test = true;
+let test = false;
 
 if (test) {
   window.onscroll = function () {

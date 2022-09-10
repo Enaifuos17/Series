@@ -7,17 +7,27 @@
 }
 
 :root {
-  --ice-cold: #a0d2eb;
-  --ice-cold-2: #8bc6e4;
-  --freeze-purple: #e5eaf5;
-  --freeze-purple-2: #d3d4d6;
-  --freeze-yellow: #c6ca8c;
-  --medium-purple: #d0bdf4;
-  --medium-purple-2: #bea8e6;
-  --purple-pain: #8458b3;
-  --purple-pain-2: #4c1a83;
-  --heavy-purple: #a28089;
-  --dark: #494d5f;
+  --navy-1: #ddeaf8;
+  --navy-2: #d5e5f6;
+  --navy-3: #cadff4;
+  --navy-4: #bdd7f1;
+  --navy-5: #accdee;
+  --navy-6: #97c1ea;
+  --navy-7: #7db1e5;
+  --navy-8: #3385d6;
+  --navy-9: #0066cc;
+  --navy-10: #0053a3;
+  --navy-11: #004282;
+  --navy-12: #003568;
+  --navy-13: #002242;
+  --navy-14: #001b35;
+  /*  */
+  --gold-1: #eee8aa;
+  --gold-2: #f0e68c;
+  --gold-3: #ffdb58;
+  --gold-4: #f4c430;
+  --gold-5: #fcc200;
+  --gold-6: #cca01d;
 }
 
 html {
@@ -26,7 +36,7 @@ html {
 
 body {
   font-family: "Open Sans", sans-serif;
-  height: 3000px;
+  /* height: 3000px; */
 }
 
 ul {
@@ -79,39 +89,31 @@ a {
 
 #scrollBttn {
   background: linear-gradient(to right, #e1dceb 50%, #fff 50%) no-repeat scroll
-    right bottom/210% 100% var(--freeze-purple);
+    right bottom/210% 100% var(--navy-10);
   /* background-color: var(--freeze-purple); */
   padding: 10px 8px;
   position: fixed;
   bottom: 10px;
-  right: -40px;
+  right: 20px;
   /* border: 1px solid var(--dark); */
   border: none;
-  border-top: 4px solid var(--medium-purple-2);
-  border-bottom: 4px solid var(--purple-pain);
+  border-top: 4px solid var(--navy-5);
+  border-bottom: 4px solid var(--gold-5);
   border-radius: 10px;
   cursor: pointer;
   transition: 0.2s linear;
+  z-index: 99;
 }
 
 #scrollBttn i {
-  color: var(--dark);
-  /* color: #000; */
+  color: var(--navy-14);
+  /* color: var(--navy-10); */
 }
-
-/* #scrollBttn:hover {
-  background-color: var(--medium-purple-2);
-  color: #fff;
-} */
 
 #scrollBttn:hover {
   background-position: left bottom;
-  border-bottom: 4px solid var(--medium-purple-2);
-  border-top: 4px solid var(--purple-pain);
-}
-
-#scrollBttn:hover i {
-  color: #000;
+  border-bottom: 4px solid var(--gold-3);
+  border-top: 4px solid var(--navy-11);
 }
 
 /* create a class to add it to the scrolling button */
@@ -127,10 +129,10 @@ a {
 
 .header {
   background-color: #fff;
-  position: relative; /* mega menu mumkin ykun 3ndha positino absolute, so mumkin tkhrj ila madrnash relative hnaya */
-  -webkit-box-shadow: 0 0 10px var(--medium-purple);
-  -moz-box-shadow: 0 0 10px var(--medium-purple);
-  box-shadow: 0 0 10px var(--medium-purple);
+  position: relative; /* mega menu mumkin ykun 3ndha position absolute, so mumkin tkhrj ila madrnash relative hnaya */
+  -webkit-box-shadow: 0 0 10px var(--navy-1);
+  -moz-box-shadow: 0 0 10px var(--navy-1);
+  box-shadow: 0 0 10px var(--navy-1);
 }
 
 .header .container {
@@ -206,7 +208,7 @@ a {
   position: absolute;
   width: 100%;
   height: 4px;
-  background-color: var(--medium-purple-2);
+  background-color: var(--navy-5);
   top: 0;
   /* bash tmshi before l Fuu9 */
   left: -100%;
@@ -215,7 +217,7 @@ a {
 }
 
 .header .container .main-nav > li > a:hover {
-  color: var(--purple-pain-2);
+  color: var(--navy-11);
   background-color: #fafafa;
 }
 
@@ -224,3 +226,173 @@ a {
 }
 
 /* ----- End Header  ----- */
+
+/* ----- ----- ----- ----- ----- */
+
+/* Start Landing */
+
+.landing {
+  position: relative;
+}
+
+.landing::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: -20px;
+  /* b9at wa7d space blbyd lfu99 */
+  width: 100%;
+  height: 100%;
+  background-color: #e0e9f3;
+  z-index: -1;
+  /* bash element yoverrr 3la bgC */
+  transform: skewY(-6deg);
+  transform-origin: top left;
+}
+
+/* ----- Media .landing::before ----- */
+@media (max-width: 991px) {
+  .landing::before {
+    top: -40px;
+  }
+}
+
+.landing .container {
+  min-height: calc(100vh - 73px);
+  /* 100vh - Header's Height */
+  display: flex;
+  align-items: center;
+  padding-bottom: 100px;
+  /* bash tl3 image o text shwiya */
+}
+
+/* ----- Media .landing .container ----- */
+@media (max-width: 991px) {
+  .landing .container {
+    flex-direction: column;
+    /* to make the image and the text in a column direction */
+    padding-bottom: 130px;
+  }
+}
+
+.landing .container .text {
+  flex: 1;
+  /* bash yakhd space 9du 9d image */
+}
+
+/* ----- Media .container .text ----- */
+@media (max-width: 991px) {
+  .landing .container .text {
+    text-align: center;
+  }
+}
+
+.landing .container .text h1 {
+  font-size: 40px;
+  font-weight: 700;
+  letter-spacing: -1px;
+  margin-bottom: 15px;
+  /*  */
+  background: url(../images/last.webp);
+  background-size: cover;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.landing .container .text p {
+  font-size: 20px;
+  line-height: 1.5;
+  margin: 5px 0 0;
+  max-width: 500px;
+  color: rgb(68, 66, 66);
+}
+
+/* ----- Media text H1, P ----- */
+@media (max-width: 991px) {
+  .landing .container .text h1 {
+    font-size: 25px;
+    padding-top: 30px;
+  }
+
+  .landing .container .text p {
+    font-size: 15px;
+    line-height: 1.4;
+    padding-bottom: 10px;
+  }
+}
+
+.landing .container .image img {
+  width: 550px;
+  max-width: 100%;
+  /* if u want to remove the img while the phone view (media) u can remove this max-width */
+  /* ANIMATION */
+  position: relative;
+  animation: up-and-down 4s linear infinite;
+}
+
+/* Start Animation */
+@keyframes up-and-down {
+  0%,
+  100% {
+    top: 0;
+  }
+  50% {
+    top: -40px;
+  }
+}
+/* End Animation */
+
+/* Media Image Animation (to pause the animation) */
+@media (max-width: 991px) {
+  .landing .container .image img {
+    animation-play-state: paused;
+  }
+}
+
+.landing .go-down {
+  color: var(--navy-8);
+  position: absolute;
+  bottom: 30px;
+  /* ghi bash ybaaan */
+  left: 50%;
+  transform: translateX(-50%);
+  transition: 0.3s linear;
+}
+
+.landing .go-down i {
+  font-size: 30px;
+  transition: 0.1s;
+  /* ANIMATION */
+  animation: bouncing 1.5s linear infinite;
+}
+
+/* Start Animation */
+@keyframes bouncing {
+  0%,
+  10%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateY(0);
+  }
+  40%,
+  60% {
+    transform: translateY(-15px);
+  }
+}
+/* End Animation */
+
+/* ----- Media go down i ----- */
+@media (max-width: 991px) {
+  .landing .go-down {
+    padding-bottom: 40px;
+  }
+}
+
+.landing .go-down i:hover {
+  color: var(--navy-11);
+}
+
+/* End Landing */
