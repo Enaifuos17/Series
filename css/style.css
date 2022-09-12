@@ -7,6 +7,7 @@
 }
 
 :root {
+  --navy-0: #ddeaf86e;
   --navy-1: #ddeaf8;
   --navy-2: #d5e5f6;
   --navy-3: #cadff4;
@@ -23,7 +24,7 @@
   --navy-14: #001b35;
   /*  */
   --gold-1: #eee8aa;
-  --gold-2: #f0e68c;
+  --gold-2: #ebe295;
   --gold-3: #ffdb58;
   --gold-4: #f4c430;
   --gold-5: #fcc200;
@@ -94,7 +95,7 @@ a {
   padding: 10px 8px;
   position: fixed;
   bottom: 10px;
-  right: 20px;
+  right: 20px; /* !!!!!!! -40px */
   /* border: 1px solid var(--dark); */
   border: none;
   border-top: 4px solid var(--navy-5);
@@ -182,7 +183,6 @@ a {
 .header .container .main-nav > li > a {
   display: flex;
   justify-content: center;
-
   align-items: center;
   height: 73px;
   position: relative;
@@ -246,7 +246,7 @@ a {
   background-color: #e0e9f3;
   z-index: -1;
   /* bash element yoverrr 3la bgC */
-  transform: skewY(-6deg);
+  transform: skewY(-5deg);
   transform-origin: top left;
 }
 
@@ -396,3 +396,115 @@ a {
 }
 
 /* End Landing */
+
+/* ----- ----- ----- ----- ----- */
+
+/* Start Mega Menu */
+
+.header .mega-menu {
+  position: absolute;
+  /* bash madkhlsh m3a dakshi lakhr, tkun HORS workflow */
+  width: 100%;
+  left: 0;
+  padding: 25px;
+  background-color: #fff;
+  z-index: -1; /* bash maybnsh mega-menu tal hover */
+  opacity: 0;
+  border-bottom: 3px solid var(--gold-5);
+  display: flex;
+  gap: 40px;
+  top: calc(100% + 30px);
+  /* tnzl mn top bwa7d 50px */
+  /* o bash mnin ndiir hover, mybnsh mega-menu in a normal way */
+  /* ghadi yban o ytl3 bdiik 50px, htsh f hover ghadi ywli top 100% */
+  transition: top 0.3s linear, opacity 0.3s linear;
+  /* drrt transition ghi 3la top o opacity */
+}
+
+/* HOVER */
+/* li liKayna wsst main-nav mnin diir 3liha hover, l mega-menu ghadi ... */
+.header .main-nav > li:hover .mega-menu {
+  opacity: 1;
+  z-index: 100;
+  top: calc(100% + 2px);
+}
+
+/*  */
+@media (max-width: 767px) {
+  .header .mega-menu {
+    flex-direction: column;
+    gap: 0;
+    padding: 10px;
+  }
+}
+
+.header .mega-menu .image img {
+  max-width: 100%;
+}
+
+/*  */
+@media (max-width: 991px) {
+  .header .mega-menu .image {
+    display: none;
+  }
+}
+
+.header .mega-menu .links {
+  min-width: 240px;
+  /* bash matnzlsh links 3la b3dyatha */
+  flex: 1;
+  /* bash mnin tmshi image, tfr9 space binaaat dakshi */
+}
+
+.header .mega-menu .links li {
+  position: relative;
+  /* htsh ghadi ndiir FILL b before o after */
+}
+
+.header .mega-menu .links li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 0;
+  height: 100%;
+  background-color: var(--navy-0);
+  z-index: -1;
+  /* bash yrj3 Lluur ka background */
+  transition: 0.3s linear;
+}
+
+/* all the li mnGhiir last li  */
+.header .mega-menu .links li:not(:last-child) {
+  border-bottom: 1px dotted var(--navy-8);
+}
+
+@media (max-width: 767px) {
+  .header .mega-menu .links:first-of-type li:last-child {
+    border-bottom: 1px dotted var(--navy-8);
+  }
+}
+
+.header .mega-menu .links li:hover::before {
+  width: 100%;
+}
+
+.header .mega-menu .links li a {
+  color: var(--navy-11);
+  padding: 15px;
+  display: block;
+  /* bash ykhdm padding */
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.header .mega-menu .links li a i {
+  margin-right: 10px;
+  color: var(--navy-10);
+}
+
+.header .mega-menu .links li a i:hover {
+  color: var(--navy-9);
+}
+
+/* End Mega Menu */
