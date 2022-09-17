@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Types</title>
+    <!-- icon -->
+    <link rel="icon" href="../images/icon_notion.png" />
+    <!-- Normalize File (from google) -->
+    <link rel="stylesheet" href="../css/normalize.css" />
+    <!-- types css's file -->
+    <link rel="stylesheet" href="../css/types.css" />
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="../css/all.min.css" />
+    <!-- Google Font (Open Sans) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Header Section -->
+    <div class="header" id="header">
+      <div class="container">
+        <img src="../images/icon_notion.png" alt="logo" class="logo" />
+        <ul class="main-nav">
+          <li><a href="#types">Home</a></li>
+          <li><a href="#types">Drama</a></li>
+          <li><a href="#types">Crime</a></li>
+          <li><a href="#types">History</a></li>
+          <li><a href="#types">Mystery</a></li>
+          <li><a href="#types">Horror</a></li>
+          <li><a href="#types">War</a></li>
+          <li><a href="#types">Comedy</a></li>
+        </ul>
+      </div>
+    </div>
+    <!-- Types Section -->
+    <div class="types">
+      <div class="container">
+        <!-- type 1 -->
+        <div class="type">
+          <div class="first">
+            <div class="title-text">
+              <h2>Drama</h2>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Voluptas id praesentium, possimus libero porro nesciunt aperiam
+                sed dolor dicta cupiditate sapiente quam cum unde atque eligendi
+                reprehenderit, adipisci tenetur illum.
+              </p>
+            </div>
+            <img src="../images/Drama.png" alt="Drama" />
+          </div>
+          <div class="second">
+            <h2>Examples</h2>
+            <!-- shows -->
+            <div class="shows">
+              <!-- show 1 -->
+              <div class="show">
+                <img src="../images/Breaking Bad.png" alt="" />
+                <!-- content (h3 + p)) -->
+                <div class="content">
+                  <h3>Breaking Bad</h3>
+                  <p>
+                    Walter White, a chemistry teacher, discovers that he has
+                    cancer and decides to get into the meth business to repay
+                    his medical debts. His priorities begin to change when he
+                    partners with Jesse.
+                  </p>
+                </div>
+                <!-- info (link + icon) -->
+                <div class="info">
+                  <a
+                    href="https://www.imdb.com/title/tt0903747/"
+                    target="_blank"
+                    >IMDP</a
+                  >
+                  <i class="fas fa-eye i-drama"></i>
+                </div>
+              </div>
+              <!-- show 2 -->
+              <div class="show">
+                <img src="../images/The Wire.png" alt="" />
+                <!-- content (h3 + p)) -->
+                <div class="content">
+                  <h3>The Wire</h3>
+                  <p>
+                    In the city of Baltimore, Detective James McNulty and his
+                    team investigate crimes and try their best to solve the
+                    bridge that exists between the drug kingpins and the law
+                    enforcement agencies.
+                  </p>
+                </div>
+                <!-- info (link + icon) -->
+                <div class="info">
+                  <a href="#">IMDP</a>
+                  <i class="fas fa-eye i-drama"></i>
+                </div>
+              </div>
+              <!-- show 3 -->
+              <div class="show">
+                <img src="../images/The Sopranos.png" alt="" />
+                <!-- content (h3 + p)) -->
+                <div class="content">
+                  <h3>The Sopranos</h3>
+                  <p>
+                    Tony Soprano, an Italian-American mafia head based in New
+                    Jersey, struggles to manage his family and criminal life and
+                    confides his affairs to his psychiatrist Jennifer Melfi.
+                  </p>
+                </div>
+                <!-- info (link + icon) -->
+                <div class="info">
+                  <a href="#">IMDP</a>
+                  <i class="fas fa-eye i-drama"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- scrolling button -->
+    <button id="scrollBttn">
+      <i class="fas fa-arrow-up"></i>
+    </button>
+    <!-- js file -->
+    <script src="../js/main.js"></script>
+    <script>
+      let i = document.querySelector("i");
+      console.log(i);
+      i.addEventListener("click", function () {
+        i.style.color = "red";
+      });
+    </script>
+  </body>
+</html>

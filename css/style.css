@@ -29,6 +29,11 @@
   --gold-4: #f4c430;
   --gold-5: #fcc200;
   --gold-6: #cca01d;
+  /*  */
+  --main-padding-top: 100px;
+  --main-padding-bottom: 100px;
+  /*  */
+  --bg-section-color: #e0e9f3;
 }
 
 html {
@@ -89,7 +94,7 @@ a {
 .main-title {
   position: relative;
   /*  */
-  margin: 100px auto;
+  margin: 0px auto 80px;
   border: 1px solid #000;
   padding: 10px 20px;
   font-size: 30px;
@@ -126,7 +131,7 @@ a {
 }
 
 .main-title::after {
-  background-color: var(--navy-6);
+  background-color: var(--navy-7);
   right: -30px;
 }
 
@@ -346,7 +351,7 @@ a {
   /* b9at wa7d space blbyd lfu99 */
   width: 100%;
   height: 100%;
-  background-color: #e0e9f3;
+  background-color: var(--bg-section-color);
   z-index: -1;
   /* bash element yoverrr 3la bgC */
   transform: skewY(-5deg);
@@ -613,3 +618,171 @@ a {
 /* End Mega Menu */
 
 /* ----- ----- ----- ----- ----- */
+
+/* Start Types */
+
+.types {
+  padding-top: var(--main-padding-top);
+  padding-bottom: var(--main-padding-bottom);
+  position: relative;
+}
+
+.types .container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 40px;
+}
+
+.types .container .box {
+  box-shadow: 0 2px 15px rgb(0 0 0 / 10%);
+  border-radius: 6px;
+  overflow: hidden;
+  /* also the img (border radius) */
+  transition: transform 0.3s linear, box-shadow 0.3s linear;
+  /* transition JUST on transform and boxshadow  */
+}
+
+.types .container .box:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 2px 15px rgb(0 0 0 / 20%);
+}
+
+.types .container .box img {
+  width: 100%;
+  /* if the images are not the same (size) */
+  max-width: 100%;
+}
+
+.types .container .box .content {
+  padding: 20px;
+}
+
+.types .container .box .content h3 {
+  margin: 0;
+  color: var(--navy-14);
+  font-weight: 600;
+}
+
+.types .container .box .content p {
+  margin: 10px 0 0;
+  line-height: 1.5;
+  color: rgb(83, 83, 83);
+  font-size: 14px;
+}
+
+.types .container .box .info {
+  padding: 20px;
+  border-top: 1px solid var(--gold-2);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.types .container .box .info a {
+  color: var(--navy-7);
+  font-weight: bold;
+  transition: 0.1s linear;
+}
+
+.types .container .box .info a:hover {
+  color: var(--navy-8);
+}
+
+.types .container .box .info i {
+  color: var(--gold-6);
+  transition: 0.1s linear;
+  cursor: pointer;
+}
+
+.types .container .box .info i:hover {
+  color: var(--gold-5);
+}
+
+.types .container .box:hover .info i {
+  animation: move-arrow 0.6s linear infinite;
+}
+
+/* Animation */
+@keyframes move-arrow {
+  100% {
+    transform: translateX(10px);
+  }
+}
+
+/* End Types */
+
+/* ----- ----- ----- ----- ----- */
+
+/* Start MyTop6 */
+
+.my-top-6 {
+  padding-top: var(--main-padding-top);
+  padding-bottom: var(--main-padding-bottom);
+  position: relative;
+  background-color: var(--bg-section-color);
+}
+
+.my-top-6 .container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 40px;
+}
+
+.my-top-6 .box {
+  padding: 15px;
+  background-color: #fff;
+  box-shadow: 0 12px 20px 0px rgb(0 0 0 / 13%), 0 2px 4px 0px rgb(0 0 0 / 12%);
+}
+
+.my-top-6 .container .box .image {
+  position: relative;
+  /* bcs w'll use the before */
+  overflow: hidden;
+}
+
+.my-top-6 .container .box .image::before {
+  content: "";
+  position: absolute;
+  /* to center the before element */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /*  */
+  background-color: rgba(255, 255, 255, 0.2);
+  width: 0;
+  height: 0;
+  opacity: 0;
+  z-index: 2;
+  /* bash before effect yji fu9 o ybaan mnin ndir hover dyl scale & rotate (LOOK DOWN) */
+}
+
+.my-top-6 .container .box .image:hover::before {
+  animation: flashing 0.7s;
+}
+
+/* Animation - flashing */
+@keyframes flashing {
+  0%,
+  40% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    width: 200%;
+    height: 200%;
+    /* 200% bash ytl3 outside of the element */
+    /* we did the overflow (hidden) */
+    /* not 200% exactly (>100%) */
+  }
+}
+
+.my-top-6 .box img {
+  max-width: 100%;
+  transition: 0.3s;
+}
+
+.my-top-6 .box .image:hover img {
+  transform: rotate(5deg) scale(1.1);
+}
+
+/* End MyTop6 */
