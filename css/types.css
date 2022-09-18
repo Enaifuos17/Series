@@ -33,6 +33,7 @@
   --main-padding-bottom: 100px;
   /*  */
   --bg-section-color: #e0e9f3;
+  --bg-crime-section-color: #e91e63;
 }
 
 html {
@@ -41,7 +42,7 @@ html {
 
 body {
   font-family: "Open Sans", sans-serif;
-  height: 3000px;
+  /* height: 3000px; */
 }
 
 ul {
@@ -99,7 +100,7 @@ a {
   padding: 10px 8px;
   position: fixed;
   bottom: 10px;
-  right: 20px; /* !!!!!!! -40px */
+  right: -40px; /* !!!!!!! -40px */
   /* border: 1px solid var(--dark); */
   border: none;
   border-top: 4px solid var(--navy-5);
@@ -263,7 +264,14 @@ a {
 
 .types {
   padding-top: calc(var(--main-padding-top) / 2);
+  padding-bottom: 50px;
   position: relative;
+}
+
+/* TYPE 2 */
+.types.type2 {
+  padding-top: 100px;
+  padding-bottom: 50px;
 }
 
 .types .container .type .first {
@@ -303,6 +311,11 @@ a {
   right: -20px;
 }
 
+/* TYPE 2  */
+.types.type2 .container .type .first h2::after {
+  background-color: rgba(233, 30, 98, 0.5);
+}
+
 .types .container .type .first h2:hover::after {
   z-index: -1;
   animation: right-move-drama 0.5s linear forwards;
@@ -331,6 +344,11 @@ a {
   font-size: 15px;
   padding-bottom: 10px;
   border-bottom: 1px solid rgba(117, 168, 172);
+}
+
+/* TYPE 2 */
+.types.type2 .container .type .first p {
+  border-bottom: 1px solid rgba(233, 30, 98, 0.6);
 }
 
 .types .container .type .first img {
@@ -370,13 +388,18 @@ a {
 .types .container .type .second h2::after {
   content: "";
   position: absolute;
-  width: 12px;
-  height: 12px;
+  width: 10px;
+  height: 10px;
   background-color: rgba(117, 168, 172, 0.5);
   border-radius: 50%;
   right: -20px;
   top: 50%;
   transform: translateY(-50%);
+}
+
+/* TYPE 2 */
+.types.type2 .container .type .second h2::after {
+  background-color: rgba(233, 30, 98, 0.5);
 }
 
 .types .container .type .second h2:hover {
@@ -393,8 +416,8 @@ a {
 @keyframes right-move-drama-2 {
   50% {
     right: 0;
-    width: 12px;
-    height: 12px;
+    width: 10px;
+    height: 10px;
   }
   100% {
     right: 0;
@@ -451,18 +474,34 @@ a {
   align-items: center;
 }
 
+/* TYPE 2 */
+.types.type2 .container .type .second .shows .show .info {
+  border-top: 1px solid rgba(233, 30, 98, 0.6);
+}
+
 .types .container .type .second .shows .show .info a {
   color: var(--navy-7);
   font-weight: bold;
   transition: 0.1s linear;
+  cursor: pointer;
+}
+
+/* TYPE 2 */
+.types.type2 .container .type .second .shows .show .info a {
+  color: rgba(233, 30, 98, 0.6);
 }
 
 .types .container .type .second .shows .show .info a:hover {
   color: var(--navy-8);
 }
 
+/* TYPE 2 */
+.types.type2 .container .type .second .shows .show .info a:hover {
+  color: var(--bg-crime-section-color);
+}
+
 .types .container .type .second .shows .show .info i {
-  color: #000;
+  /* color: black; */
   cursor: pointer;
   transition: 0.1s linear;
 }
@@ -472,4 +511,108 @@ a {
   color: var(--navy-7);
 }
 
+/* TYPE 2 */
+.types.type2 .container .type .second .shows .show .info i:hover {
+  color: rgba(233, 30, 98, 0.5);
+}
+
+.coloring {
+  color: var(--navy-7);
+}
+
+.coloring2 {
+  color: rgba(233, 30, 98, 0.5);
+}
+
+/* ------ type 2 ------*/
+.between {
+  border: 1px solid #777;
+  width: 650px;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 50px;
+  height: 20px;
+  /* max-width: 100%; */
+  /*  */
+  position: relative;
+  /* well make the before&after el */
+  transition: 0.3s linear;
+}
+
+@media (max-width: 767px) {
+  .between {
+    width: 250px;
+  }
+}
+
+.between::before {
+  content: "";
+  position: absolute;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.2);
+  left: -18px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.between::after {
+  content: "";
+  position: absolute;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background-color: rgba(84, 84, 107, 0.9);
+  right: -18px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* start animation */
+@keyframes move-left {
+  50% {
+    left: 0;
+    width: 9px;
+    height: 9px;
+  }
+  100% {
+    left: 0;
+    border-radius: 0;
+    width: 15%;
+    height: 100%;
+  }
+}
+
+@keyframes move-right {
+  50% {
+    right: 0;
+    width: 9px;
+    height: 9px;
+  }
+  100% {
+    right: 0;
+    border-radius: 0;
+    width: 85%;
+    height: 100%;
+  }
+}
+/* end animation */
+
+.between:hover {
+  border: 1px solid #e7e7e7;
+  transition-delay: 0.6s;
+}
+
+.between:hover::before {
+  animation: move-left 0.6s linear forwards;
+}
+.between:hover::after {
+  animation: move-right 0.6s linear forwards;
+}
+
 /* End Types Section */
+
+/* crime section */

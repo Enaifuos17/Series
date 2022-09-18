@@ -27,19 +27,20 @@
       <div class="container">
         <img src="../images/icon_notion.png" alt="logo" class="logo" />
         <ul class="main-nav">
-          <li><a href="#types">Home</a></li>
-          <li><a href="#types">Drama</a></li>
-          <li><a href="#types">Crime</a></li>
-          <li><a href="#types">History</a></li>
-          <li><a href="#types">Mystery</a></li>
-          <li><a href="#types">Horror</a></li>
-          <li><a href="#types">War</a></li>
-          <li><a href="#types">Comedy</a></li>
+          <li><a href="index.html" target="_self">Home</a></li>
+          <li><a href="#drama">Drama</a></li>
+          <li><a href="#crime">Crime</a></li>
+          <li><a href="#history">History</a></li>
+          <li><a href="#mystery">Mystery</a></li>
+          <li><a href="#horror">Horror</a></li>
+          <li><a href="#war">War</a></li>
+          <li><a href="#comedy">Comedy</a></li>
         </ul>
       </div>
     </div>
+    <!-- ############### Type 1 ################# -->
     <!-- Types Section -->
-    <div class="types">
+    <div class="types type1">
       <div class="container">
         <!-- type 1 -->
         <div class="type">
@@ -74,12 +75,8 @@
                 </div>
                 <!-- info (link + icon) -->
                 <div class="info">
-                  <a
-                    href="https://www.imdb.com/title/tt0903747/"
-                    target="_blank"
-                    >IMDP</a
-                  >
-                  <i class="fas fa-eye i-drama"></i>
+                  <a id="breaking-bad">IMDB</a>
+                  <i class="fas fa-eye i-drama" id="drama-one"></i>
                 </div>
               </div>
               <!-- show 2 -->
@@ -97,8 +94,8 @@
                 </div>
                 <!-- info (link + icon) -->
                 <div class="info">
-                  <a href="#">IMDP</a>
-                  <i class="fas fa-eye i-drama"></i>
+                  <a id="the-wire">IMDB</a>
+                  <i class="fas fa-eye i-drama" id="drama-two"></i>
                 </div>
               </div>
               <!-- show 3 -->
@@ -115,8 +112,93 @@
                 </div>
                 <!-- info (link + icon) -->
                 <div class="info">
-                  <a href="#">IMDP</a>
-                  <i class="fas fa-eye i-drama"></i>
+                  <a id="the-sopranos">IMDB</a>
+                  <i class="fas fa-eye i-drama" id="drama-three"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- LINE -->
+    <div class="between"></div>
+    <!-- ############### Type 2 ################# -->
+    <!-- Types Section -->
+    <div class="types type2" id="crime">
+      <div class="container">
+        <!-- type 1 -->
+        <div class="type">
+          <div class="first">
+            <div class="title-text">
+              <h2>Crime</h2>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Voluptas id praesentium, possimus libero porro nesciunt aperiam
+                sed dolor dicta cupiditate sapiente quam cum unde atque eligendi
+                reprehenderit, adipisci tenetur illum.
+              </p>
+            </div>
+            <img src="../images/Crime.png" alt="Crime" />
+          </div>
+          <div class="second">
+            <h2>Examples</h2>
+            <!-- shows -->
+            <div class="shows">
+              <!-- show 1 -->
+              <div class="show">
+                <img src="../images/true detective.png" alt="" />
+                <!-- content (h3 + p)) -->
+                <div class="content">
+                  <h3>True Detective</h3>
+                  <p>
+                    Walter White, a chemistry teacher, discovers that he has
+                    cancer and decides to get into the meth business to repay
+                    his medical debts. His priorities begin to change when he
+                    partners with Jesse.
+                  </p>
+                </div>
+                <!-- info (link + icon) -->
+                <div class="info">
+                  <a id="true-detective">IMDB</a>
+                  <i class="fas fa-eye i-crime" id="crime-one"></i>
+                </div>
+              </div>
+              <!-- show 2 -->
+              <div class="show">
+                <img src="../images/The Sopranos.png" alt="" />
+                <!-- content (h3 + p)) -->
+                <div class="content">
+                  <h3>The Sopranos</h3>
+                  <p>
+                    In the city of Baltimore, Detective James McNulty and his
+                    team investigate crimes and try their best to solve the
+                    bridge that exists between the drug kingpins and the law
+                    enforcement agencies.
+                  </p>
+                </div>
+                <!-- info (link + icon) -->
+                <div class="info">
+                  <a id="the-sopranos2">IMDB</a>
+                  <i class="fas fa-eye i-crime" id="crime-two"></i>
+                </div>
+              </div>
+              <!-- show 3 -->
+              <div class="show">
+                <img src="../images/fargo.png" alt="" />
+                <!-- content (h3 + p)) -->
+                <div class="content">
+                  <h3>Fargo</h3>
+                  <p>
+                    Tony Soprano, an Italian-American mafia head based in New
+                    Jersey, struggles to manage his family and criminal life and
+                    confides his affairs to his psychiatrist Jennifer Melfi.
+                  </p>
+                </div>
+                <!-- info (link + icon) -->
+                <div class="info">
+                  <a id="fargo">IMDB</a>
+                  <i class="fas fa-eye i-crime" id="crime-three"></i>
                 </div>
               </div>
             </div>
@@ -129,13 +211,6 @@
       <i class="fas fa-arrow-up"></i>
     </button>
     <!-- js file -->
-    <script src="../js/main.js"></script>
-    <script>
-      let i = document.querySelector("i");
-      console.log(i);
-      i.addEventListener("click", function () {
-        i.style.color = "red";
-      });
-    </script>
+    <script src="../js/types.js"></script>
   </body>
 </html>
