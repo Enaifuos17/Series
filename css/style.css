@@ -713,34 +713,34 @@ a {
 
 /* ----- ----- ----- ----- ----- */
 
-/* Start MyTop6 */
+/* Start SomeOf */
 
-.my-top-6 {
+.some-of {
   padding-top: var(--main-padding-top);
   padding-bottom: var(--main-padding-bottom);
   position: relative;
   background-color: var(--bg-section-color);
 }
 
-.my-top-6 .container {
+.some-of .container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 40px;
 }
 
-.my-top-6 .box {
-  padding: 15px;
+.some-of .box {
+  padding: 8px;
   background-color: #fff;
   box-shadow: 0 12px 20px 0px rgb(0 0 0 / 13%), 0 2px 4px 0px rgb(0 0 0 / 12%);
 }
 
-.my-top-6 .container .box .image {
+.some-of .container .box .image {
   position: relative;
   /* bcs w'll use the before */
   overflow: hidden;
 }
 
-.my-top-6 .container .box .image::before {
+.some-of .container .box .image::before {
   content: "";
   position: absolute;
   /* to center the before element */
@@ -756,7 +756,7 @@ a {
   /* bash before effect yji fu9 o ybaan mnin ndir hover dyl scale & rotate (LOOK DOWN) */
 }
 
-.my-top-6 .container .box .image:hover::before {
+.some-of .container .box .image:hover::before {
   animation: flashing 0.7s;
 }
 
@@ -776,13 +776,184 @@ a {
   }
 }
 
-.my-top-6 .box img {
+.some-of .box img {
   max-width: 100%;
   transition: 0.3s;
 }
 
-.my-top-6 .box .image:hover img {
+.some-of .box .image:hover img {
   transform: rotate(5deg) scale(1.1);
 }
 
-/* End MyTop6 */
+/* End SomeOf */
+
+/* ----- ----- ----- ----- ----- */
+
+/* Start BeMember */
+
+.be-member {
+  padding-top: var(--main-padding-top);
+  padding-bottom: var(--main-padding-bottom);
+  position: relative;
+}
+
+.be-member .container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 40px;
+}
+
+.be-member .container .box {
+  text-align: center;
+  border: 1px solid #ccc;
+}
+
+.be-member .container .box .img-holder {
+  position: relative;
+  /* before&after is coming */
+  overflow: hidden;
+}
+
+.be-member .container .box .img-holder::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: -3px;
+  width: 100%;
+  height: 100%;
+  /* background-color: blue; */
+}
+
+.be-member .container .box .img-holder::after {
+  content: "";
+  position: absolute;
+  bottom: 0px;
+  right: -10px;
+  border-style: solid;
+  border-width: 0px 0px 160px 400px;
+  border-color: transparent transparent white transparent;
+  transition: 0.3s linear;
+}
+
+@media (min-width: 992px) {
+  .be-member .container .box .img-holder::after {
+    border-width: 0px 0px 160px 600px;
+  }
+}
+
+.be-member .container .box .img-holder img {
+  max-width: 100%;
+}
+
+.be-member .container .box:hover .img-holder::after {
+  border-width: 160px 400px 160px 0px;
+}
+
+@media (min-width: 992px) {
+  .be-member .container .box:hover .img-holder::after {
+    border-width: 160px 600px 160px 0px;
+  }
+}
+
+.be-member .container .box h2 {
+  position: relative;
+  font-size: 25px;
+  margin: auto;
+  width: fit-content;
+  /* bash line li ghadi ndiruh b after yji 9d title nishan */
+}
+
+.be-member .container .box h2::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 10px;
+  width: calc(100% - 20px);
+  /* 20px => 10px li df3t mn left o tzadt f right dik 10px so we have 20px */
+  height: 3px;
+}
+
+.be-member .container .box p {
+  line-height: 1.5;
+  font-size: 16px;
+  margin: 30px 0;
+  padding: 25px;
+  color: #777;
+  /*  */
+}
+
+.be-member .container .box a {
+  display: block;
+  border: 1px solid transparent;
+  width: fit-content;
+  margin: 0 auto 20px;
+  /* font-weight: bold; */
+  font-size: 18px;
+  padding: 10px 20px;
+  border-radius: 5px;
+  transition: 0.3s linear;
+}
+
+/* coloring boxes by using the special classes that we gave */
+/* -------- -------- -------- -------*/
+
+/* quality */
+.be-member .container .quality .img-holder::before {
+  background-color: rgba(244, 64, 55, 0.6);
+}
+
+.be-member .container .quality h2::after {
+  background-color: rgb(244, 64, 55);
+}
+
+.be-member .container .quality a {
+  color: rgb(244, 64, 55);
+  border-color: rgb(244, 64, 55);
+  background: linear-gradient(to right, rgb(244, 64, 55) 50%, #fff 50%);
+  background-size: 200% 100%;
+  background-position: right bottom;
+}
+
+/* time */
+.be-member .container .time .img-holder::before {
+  background-color: rgb(84, 180, 172, 0.7);
+}
+
+.be-member .container .time h2::after {
+  background-color: rgb(84, 180, 172);
+}
+
+.be-member .container .time a {
+  color: rgb(84, 180, 172);
+  border-color: rgb(84, 180, 172);
+  background: linear-gradient(to right, rgb(84, 180, 172) 50%, #fff 50%);
+  background-size: 200% 100%;
+  background-position: right bottom;
+}
+
+/* passion */
+.be-member .container .passion .img-holder::before {
+  background-color: rgba(168, 120, 207, 0.7);
+}
+
+.be-member .container .passion h2::after {
+  background-color: rgba(168, 120, 207);
+}
+
+.be-member .container .passion a {
+  color: rgba(168, 120, 207);
+  border-color: rgba(168, 120, 207);
+  background: linear-gradient(to right, rgba(168, 120, 207) 50%, #fff 50%);
+  background-size: 200% 100%;
+  background-position: right bottom;
+}
+
+/* -------- -------- -------- -------*/
+
+/*  */
+.be-member .container .box:hover a {
+  background-position: left bottom;
+  color: #fff;
+}
+
+/* End BeMember */
