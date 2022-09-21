@@ -857,7 +857,7 @@ a {
 
 .be-member .container .box h2 {
   position: relative;
-  font-size: 25px;
+  font-size: 27px;
   margin: auto;
   width: fit-content;
   /* bash line li ghadi ndiruh b after yji 9d title nishan */
@@ -948,8 +948,6 @@ a {
   background-position: right bottom;
 }
 
-/* -------- -------- -------- -------*/
-
 /*  */
 .be-member .container .box:hover a {
   background-position: left bottom;
@@ -957,3 +955,66 @@ a {
 }
 
 /* End BeMember */
+
+/* ----- ----- ----- ----- ----- */
+
+/* Start Users */
+
+.team {
+  padding-top: var(--main-padding-top);
+  padding-bottom: var(--main-padding-bottom);
+  position: relative;
+  background-color: var(--bg-section-color);
+}
+
+.team .container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 40px;
+}
+
+.team .box {
+  background-color: #fff;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgb(0 0 0 / 10%);
+  border-radius: 6px;
+  position: relative;
+  /* relative to style the img with the absolute pos */
+}
+
+.team .box img {
+  position: absolute;
+  right: -10px;
+  top: -50px;
+  width: 100px;
+  height: 100px;
+  /* if u have the image with equal sizes (width&height) u can skip the height, width is enough (one of the two is enough)*/
+  border-radius: 50%;
+  border: 10px solid var(--bg-section-color);
+}
+
+.team .box h3 {
+  margin: 0 0 10px;
+  color: var(--navy-12);
+}
+
+.team .box .title {
+  color: rgb(80, 80, 80);
+  display: block;
+  /* block --> to apply the margin (.title is span) */
+  margin-bottom: 10px;
+}
+
+.team .box .rate .filled {
+  color: var(--gold-4);
+}
+
+.team .box p {
+  line-height: 1.4;
+  color: #777;
+  font-size: 15px;
+  margin-top: 10px;
+  margin-bottom: 0;
+}
+
+/* End Users */
