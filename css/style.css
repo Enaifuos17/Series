@@ -958,7 +958,7 @@ a {
 
 /* ----- ----- ----- ----- ----- */
 
-/* Start Users */
+/* Start Team Members */
 
 .team {
   padding-top: var(--main-padding-top);
@@ -985,12 +985,22 @@ a {
 .team .box img {
   position: absolute;
   right: -10px;
-  top: -50px;
+  top: -38px;
   width: 100px;
   height: 100px;
   /* if u have the image with equal sizes (width&height) u can skip the height, width is enough (one of the two is enough)*/
   border-radius: 50%;
   border: 10px solid var(--bg-section-color);
+}
+
+.team .box img {
+  transition: 0.27s linear;
+  /* cursor: pointer; */
+}
+
+.team .box img:hover {
+  width: 120px;
+  height: 120px;
 }
 
 .team .box h3 {
@@ -1017,4 +1027,140 @@ a {
   margin-bottom: 0;
 }
 
-/* End Users */
+/* End Team Members */
+
+/* ----- ----- ----- ----- ----- */
+
+/* Start Websites */
+
+.websites {
+  padding-top: var(--main-padding-top);
+  padding-bottom: var(--main-padding-bottom);
+  position: relative;
+}
+
+.websites .container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 40px;
+}
+
+.websites .container .box {
+  position: relative;
+  /* we will do the bgC with the before&after  */
+  cursor: pointer;
+}
+
+.websites .container .box::before,
+.websites .container .box::after {
+  content: "";
+  position: absolute;
+  background-color: rgba(224, 233, 243);
+  right: 0;
+  /* right not left hitash baghi bgC ytn9ss mn LEFT */
+  top: 0;
+  height: 100%;
+  border-radius: 10px;
+  transition: 0.2s linear;
+  border-bottom: 2px solid rgba(244, 195, 48, 0.5);
+}
+
+.websites .container .box::before {
+  width: calc(100% - 60px);
+  /* 60px bash tn9ss dik part */
+  z-index: -2; /* bash ykun mura pic */
+  /* -2 hitash f after ghadi ndiir -1 bash yji fu9u */
+}
+
+.websites .container .box::after {
+  z-index: -1;
+  /* -1 bash YBAAN 3la before */
+  background-color: rgb(207, 224, 241);
+  width: 0;
+  /* bash 7ta l hover 3ad ywli width 100% - 60px */
+}
+
+/* hover */
+.websites .container .box:hover::after {
+  width: calc(100% - 60px);
+  border-bottom: 2px solid var(--gold-5);
+}
+
+/*  */
+
+.websites .container .box .data {
+  display: flex;
+  align-items: center;
+  padding-top: 60px;
+}
+
+.websites .container .box .data img {
+  filter: grayscale(80%);
+  /* width: 100%; */
+  transition: 0.3s linear;
+  width: calc(100% - 60px);
+  /* 60px ma3ndha ta raltion b 60px dyl before */
+  /* ghi bash nkhli space l icons */
+  border-radius: 10px;
+}
+
+.websites .container .box:hover .data img {
+  filter: grayscale(0);
+}
+
+.websites .container .box .data .social {
+  width: 60px; /* to verify the space li 3tiit */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+.websites .container .box .data .social a {
+  width: 60px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.websites .container .box .data .social a i {
+  color: rgba(0, 54, 104, 0.7);
+  transition: 0.2s linear;
+}
+
+.websites .container .box:hover .data .social a i {
+  color: rgba(0, 54, 104);
+}
+
+.websites .container .box .data .social a:hover i {
+  color: var(--navy-9);
+}
+
+.websites .container .box .info {
+  padding-left: 80px; /* 60px ghadi yji lass9 nishan */
+}
+
+.websites .container .box .info h3 {
+  margin-bottom: 0;
+  color: rgba(204, 160, 29, 0.8);
+  font-size: 22px;
+  transition: 0.2s linear;
+}
+
+.websites .container .box .info p {
+  margin-top: 10px;
+  margin-bottom: 25px;
+  font-size: 15px;
+}
+
+.websites .container .box:hover h3 {
+  color: rgba(204, 160, 29);
+}
+
+/* End Websites */
+
+/* ----- ----- ----- ----- ----- */
+
+/* Start  */
+/* End  */
