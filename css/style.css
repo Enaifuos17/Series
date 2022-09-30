@@ -1162,5 +1162,130 @@ a {
 
 /* ----- ----- ----- ----- ----- */
 
-/* Start  */
-/* End  */
+/* Start  Services */
+
+.services {
+  padding-top: var(--main-padding-top);
+  padding-bottom: var(--main-padding-bottom);
+  position: relative;
+  background-color: var(--bg-section-color);
+}
+
+.services .container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 40px;
+}
+
+.services .container .box {
+  /* border: 1px solid red; */
+  background-color: #fff;
+  box-shadow: 0 12px 20px 0 rgb(0 0 0 / 13%), 0 2px 4px 0 rgb(0 0 0 / 12%);
+  counter-increment: services;
+  /* to use the counter(name) f before */
+  transition: 0.25s linear;
+  position: relative;
+}
+
+.services .container .box::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  /* to center it */
+  height: 2px;
+  top: -2px;
+  /* bash ytl3 lfu9 bdakshi d height nit */
+  background-color: var(--navy-8);
+  width: 0;
+  /* when when u will hover on it width 0 >> width 100% */
+  transition: 0.25s linear;
+}
+
+.services .container .box:hover {
+  transform: translateY(-10px);
+}
+
+.services .container .box:hover::before {
+  width: 100%;
+}
+
+/* direct child i */
+.services .box > i {
+  margin: 30px auto 20px;
+  display: block;
+  /* display block to respect the margin */
+  text-align: center;
+  color: #adadad;
+  transition: 0.25s linear;
+}
+
+.services .container .box:hover i {
+  color: #999999;
+}
+
+.services .box > h3 {
+  text-align: center;
+  margin: 20px 0 40px;
+  font-size: 25px;
+  color: var(--navy-8);
+}
+
+.services .box .info {
+  padding: 15px;
+  position: relative;
+  background-color: #f5f5f5;
+  text-align: right;
+}
+
+.services .box .info a {
+  color: #696969;
+  transition: 0.2s linear;
+  font-weight: 600;
+}
+
+.services .box .info a:hover {
+  color: #000;
+}
+
+.services .box .info::before {
+  content: "0" counter(services);
+  /* 01, 02, 03... */
+  position: absolute;
+  background-color: var(--navy-7);
+  color: #fff;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 60px;
+  font-size: 28px;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* to center the number */
+  padding-right: 15px;
+  transition: 0.25s linear;
+}
+
+.services .box:hover .info::before {
+  background-color: var(--navy-8);
+}
+
+.services .box .info::after {
+  content: "";
+  position: absolute;
+  background-color: #adadad;
+  top: 0;
+  left: 60px; /* 80px */
+  width: 20px; /* 50px */
+  height: calc(100% + 0.4px);
+  transform: skewX(-10deg);
+  transition: 0.25s linear;
+}
+
+.services .box:hover .info::after {
+  background-color: #999999;
+}
+
+/* End  Services */
