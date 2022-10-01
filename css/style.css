@@ -42,7 +42,7 @@ html {
 
 body {
   font-family: "Open Sans", sans-serif;
-  /* height: 3000px; */
+  /* height: 9000px; */
 }
 
 ul {
@@ -1289,3 +1289,68 @@ a {
 }
 
 /* End  Services */
+
+/* ----- ----- ----- ----- ----- */
+
+/* Start Languages */
+
+.languages {
+  padding-top: var(--main-padding-top);
+  padding-bottom: var(--main-padding-bottom);
+  position: relative;
+}
+
+.languages .container {
+  display: flex;
+  align-items: center;
+}
+
+/*  */
+@media (max-width: 991px) {
+  .languages .container img {
+    display: none;
+  }
+}
+/*  */
+
+.languages .container .lngs {
+  flex: 1;
+}
+
+.languages .container .lngs .lng h3 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 19px;
+}
+
+.languages .container .lngs .lng h3 span {
+  font-size: 12px;
+  border: 1px solid #ccc;
+  padding: 3px 5px;
+  border-radius: 4px;
+  color: var(--gold-6);
+}
+
+.languages .container .lngs .lng .progress {
+  height: 30px;
+  background-color: #eee;
+  position: relative;
+  /* bcs wll let the span move with pos absolute */
+}
+
+.languages .container .lngs .lng .progress span {
+  position: absolute;
+  left: 0;
+  top: 0;
+  /* to start from top left */
+  height: 100%;
+  background: linear-gradient(to left, var(--gold-3), var(--navy-7));
+  transition: width 0.35s linear;
+}
+
+.languages .container img {
+  max-width: 100%;
+}
+
+/* End Languages */
