@@ -1477,6 +1477,8 @@ a {
 
 /* ----- ----- ----- ----- ----- */
 
+/* Start Events */
+
 .events {
   padding-top: var(--main-padding-top);
   padding-bottom: var(--main-padding-bottom);
@@ -1596,9 +1598,9 @@ a {
   text-align: center;
   margin: 40px 0 0;
   font-size: 30px;
-  letter-spacing: 1.6px;
-  font-weight: 600;
-  text-transform: uppercase;
+  /* letter-spacing: 1.6px; */
+  font-weight: 700;
+  /* text-transform: uppercase; */
 }
 
 /* respnsv */
@@ -1697,3 +1699,161 @@ a {
 .events .subscribe form input[type="submit"]:hover {
   background-color: var(--navy-8);
 }
+
+/* End Events */
+
+/* ----- ----- ----- ----- ----- */
+
+/* Start Pricing Plans */
+
+.pricing-plans {
+  padding-top: var(--main-padding-top);
+  padding-bottom: var(--main-padding-bottom);
+  position: relative;
+  background-color: var(--bg-section-color);
+}
+
+.pricing-plans .container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+}
+
+.pricing-plans .box {
+  position: relative;
+  box-shadow: 0 12px 20px 0px rgb(0 0 0 / 13%), 0 2px 4px 0px rgb(0 0 0 / 12%);
+  transition: 0.3s;
+  background-color: #fff;
+  text-align: center;
+  z-index: 1;
+  border-bottom: 2px solid var(--gold-4);
+}
+
+.pricing-plans .box::before,
+.pricing-plans .box::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 50%;
+  background-color: #f6f6f6;
+  z-index: -1;
+  transition: 0.3s;
+}
+
+.pricing-plans .box::before {
+  left: 0;
+  top: 0;
+}
+
+.pricing-plans .box::after {
+  right: 0;
+  bottom: 0;
+}
+
+.pricing-plans .box:hover::before,
+.pricing-plans .box:hover::after {
+  width: 100%;
+}
+
+/* respnsv LARGE SCREENS */
+@media (min-width: 1200px) {
+  .pricing-plans .box.popular {
+    top: -20px;
+  }
+}
+/* */
+
+.pricing-plans .box.popular .mark {
+  position: absolute;
+  writing-mode: vertical-rl;
+  background-color: var(--gold-4);
+  color: #fff;
+  padding: 10px 10px 35px 10px;
+  font-size: 18px;
+  right: 20px;
+  width: 40px;
+  /* transition: 0.2s; */
+}
+
+.pricing-plans .box.popular .mark::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 0%;
+  border-style: solid;
+  border-color: transparent transparent #fff transparent;
+  border-width: 20px;
+  transition: 0.3s;
+}
+
+.pricing-plans .box.popular:hover .mark::before {
+  border-color: transparent transparent #f6f6f6 transparent;
+}
+
+.pricing-plans .box .title {
+  margin: 30px 0;
+  font-size: 22px;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+}
+
+.pricing-plans .box img {
+  width: 80px;
+  margin-bottom: 30px;
+}
+
+.pricing-plans .box .price {
+  margin-bottom: 20px;
+}
+
+.pricing-plans .box .amount {
+  display: block;
+  /* to respect all the stuff */
+  font-size: 50px;
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: var(--navy-10);
+}
+
+.pricing-plans .box .time {
+  color: #777;
+}
+
+.pricing-plans .box ul {
+  text-align: left;
+}
+
+.pricing-plans .box ul li {
+  padding: 17px;
+  border-top: 1px solid rgb(172, 172, 172);
+  font-weight: 600;
+}
+
+.pricing-plans .box ul li::before {
+  font-family: "Font Awesome 5 Free";
+  content: "\f00c";
+  margin-right: 10px;
+  font-weight: 900;
+  /* font-weight: 900 ==> to see the icon */
+  color: var(--navy-10);
+}
+
+.pricing-plans .box a {
+  display: block;
+  width: fit-content;
+  border: 2px solid var(--navy-8);
+  margin: 30px auto 40px;
+  padding: 15px 20px;
+  border-radius: 6px;
+  font-weight: bold;
+  transition: 0.2s linear;
+  color: var(--navy-8);
+}
+
+.pricing-plans .box a:hover {
+  color: #fff;
+  border-color: var(--navy-8);
+  background-color: var(--navy-8);
+}
+
+/* End Pricing Plans */

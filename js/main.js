@@ -47,7 +47,7 @@ window.onscroll = function () {
 
 // 1000 ms = 1 s
 
-let countDownDate = new Date("Dec 31, 2022 23:59:59").getTime(); // our target by miliSeconds
+let countDownDate = new Date("January 06, 2023 23:59:59").getTime(); // our target by miliSeconds
 console.log(countDownDate);
 // get how many MiliSeconds from NOW to the TARGET
 
@@ -87,7 +87,7 @@ let counter = setInterval(() => {
     minutes < 10 ? `0${minutes}` : minutes;
   document.querySelector(".seconds").innerHTML =
     seconds < 10 ? `0${seconds}` : seconds;
-  // note: condition => IF number < 10 ==> make a place for ZERO 0 to keep the two numbers form ELSE number
+  // note: condition => IF number < 10 ==> make a place for ZERO 0 to keep the two numbers form, ELSE number
 
   if (dateDiff < 0) {
     clearInterval(counter); // stop the function
