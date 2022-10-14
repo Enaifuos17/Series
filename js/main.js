@@ -94,3 +94,17 @@ let counter = setInterval(() => {
     document.querySelector(".events .info .title").innerHTML = "Congrats";
   }
 }, 1000);
+
+// ---------------------------------------------------------
+
+// Change Video (Videos Section)
+
+let liVideo1 = document.getElementById("li-video1");
+let liVideo2 = document.getElementById("li-video2");
+let sourceVideo = document.getElementById("main-source");
+console.log(sourceVideo.src);
+
+liVideo2.onclick = () => {
+  sourceVideo.src = "../videos/video_2.mp4";
+  console.log("DONE DONE");
+};

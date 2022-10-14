@@ -1857,3 +1857,94 @@ a {
 }
 
 /* End Pricing Plans */
+
+/* ----- ----- ----- ----- ----- */
+
+/* Start Videos */
+
+.videos {
+  padding-top: var(--main-padding-top);
+  padding-bottom: var(--main-padding-bottom);
+  position: relative;
+}
+
+.videos .container .holder {
+  display: flex;
+  justify-content: center;
+  background-color: var(--bg-section-color);
+  border: 1px solid #ddd;
+  /* border: 1px solid red; */
+}
+
+/* respnsv */
+@media (max-width: 991px) {
+  .videos .container .holder {
+    flex-direction: column;
+  }
+}
+
+.videos .container .holder .list {
+  min-width: 300px;
+  background-color: #fff;
+  /* background-color: rgb(214, 176, 222); */
+}
+
+.videos .container .holder .list .name {
+  display: flex;
+  justify-content: space-between;
+  padding: 17px;
+  background-color: #f4f4f4;
+  /* background-color: lightgreen; */
+  font-weight: bold;
+}
+
+.videos .container .holder .list ul li {
+  padding: 17px;
+  border-top: 1px solid #d4d4d4;
+  cursor: pointer;
+  transition: 0.2s linear;
+  font-weight: 600;
+}
+
+.videos .container .holder .list ul li:hover {
+  background-color: #f8f8f8;
+  color: var(--navy-10);
+}
+
+.videos .container .holder .list ul li span {
+  display: block;
+  margin-top: 10px;
+  color: #777;
+  font-size: 14px;
+  font-weight: normal;
+  transition: 0.2s linear;
+}
+
+.videos .container .holder .list ul li:hover span {
+  color: #000;
+}
+
+.videos .container .holder .preview {
+  background-color: #e2e2e2;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.videos .container .holder .preview img {
+  max-width: 100%;
+}
+
+.videos .container .holder .preview .info {
+  padding: 20px;
+  background-color: #fff;
+  margin-top: 10px;
+  border-radius: 6px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+/* End Videos */
