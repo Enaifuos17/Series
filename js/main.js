@@ -102,9 +102,14 @@ let counter = setInterval(() => {
 let liVideo1 = document.getElementById("li-video1");
 let liVideo2 = document.getElementById("li-video2");
 let sourceVideo = document.getElementById("main-source");
-console.log(sourceVideo.src);
+let mainVideo = document.getElementById("main-video");
 
-liVideo2.onclick = () => {
-  sourceVideo.src = "../videos/video_2.mp4";
-  console.log("DONE DONE");
-};
+console.log(mainVideo.src);
+
+liVideo1.addEventListener("click", () => {
+  mainVideo.src = "../videos/video_1.mp4";
+});
+
+liVideo2.addEventListener("click", () => {
+  mainVideo.src = "../videos/video_2.mp4";
+});
