@@ -42,7 +42,7 @@ html {
 
 body {
   font-family: "Open Sans", sans-serif;
-  /* height: 9000px; */
+  height: 20000px;
 }
 
 ul {
@@ -2033,6 +2033,13 @@ a {
   font-weight: bold;
   margin-top: 10px;
   margin-bottom: 10px;
+}
+
+.stats .box .number.money::after {
+  content: "K";
+  color: #777;
+  font-weight: 600;
+  font-size: 50px;
 }
 
 .stats .box .text {

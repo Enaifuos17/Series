@@ -113,3 +113,40 @@ liVideo1.addEventListener("click", () => {
 liVideo2.addEventListener("click", () => {
   mainVideo.src = "../videos/video_2.mp4";
 });
+
+// ---------------------------------------------------------
+
+// Increase Numbers (Stats Section)
+
+let nums = document.querySelectorAll(".stats .box .number");
+let statsSection = document.querySelector(".stats");
+let started = false;
+
+// main function
+function startCount(x) {
+  // goal => get the number from data-goal to stop in it
+  let goal = x.dataset.goal;
+  // count => setInterval()
+  let count = setInterval(() => {
+    x.textContent++;
+    if (x.textContent == goal) {
+      clearInterval(count);
+    }
+  }, 2000 / goal);
+  // 2000 / goal ==> try to fixed the duration of all number while the increase
+}
+
+window.onscroll = function () {
+  if (window.scrollY >= statsSection.offsetTop) {
+    // started == false ===> !started
+    if (!started) {
+      nums.forEach((num) => {
+        startCount(num);
+      });
+    }
+    started = true;
+  }
+};
+
+// note: why i used the condition of if (!started)
+// bash mea ydaaar increase ghadi twliii started true so mghadiish yb9a kul shwiya f scroll ydaar increase of numbers
