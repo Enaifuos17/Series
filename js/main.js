@@ -1,37 +1,54 @@
-// Scroll to Up (button)
+// * ---------------------------------------------------------
+// * ---------------------------------------------------------
+
+// ! Scroll to Up (button)
+// ! Animate Width On Scrolling (Languages Section)
+// ! Increase Numbers (Stats Section)
 
 let mySpan = document.querySelector("#scrollBttn");
 let test = true;
-
-if (test) {
-  window.onscroll = function () {
-    if (this.scrollY >= 600) {
-      mySpan.classList.add("show");
-    } else {
-      mySpan.classList.remove("show");
-    }
-    // another way to write this code
-    //   this.scrollY >= 600
-    //     ? mySpan.classList.add("show")
-    //     : mySpan.classList.remove("show");
-  };
-
-  mySpan.onclick = function () {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
-    });
-  };
-}
-
-// ---------------------------------------------------------
-
-// Animate Width On Scrolling (Languages Section)
-
+//
 let languages_section = document.querySelector(".languages");
 let spans = document.querySelectorAll(".languages .progress span");
+//
+let nums = document.querySelectorAll(".stats .box .number");
+let statsSection = document.querySelector(".stats");
+let started = false;
 
+// * main function (Stats Section)
+function startCount(x) {
+  // goal => get the number from data-goal to stop in it
+  let goal = x.dataset.goal;
+  // count => setInterval()
+  let count = setInterval(() => {
+    x.textContent++;
+    if (x.textContent == goal) {
+      clearInterval(count);
+    }
+  }, 2000 / goal);
+  // 2000 / goal ==> try to fixed the duration of all number while the increase
+}
+
+// **** oncsroll ****
 window.onscroll = function () {
+  //
+
+  // * Scrolling Button
+
+  if (this.scrollY >= 800) {
+    mySpan.classList.add("show");
+  } else {
+    mySpan.classList.remove("show");
+  }
+  // another way to write this code (ternary operator)
+  //   this.scrollY >= 600
+  //     ? mySpan.classList.add("show")
+  //     : mySpan.classList.remove("show");
+
+  // * -----------------------------------------------
+
+  // * Animate Width Language Section
+
   if (window.scrollY >= languages_section.offsetTop - 10) {
     // console.log("DONE DONE");
     spans.forEach((span) => {
@@ -39,11 +56,38 @@ window.onscroll = function () {
       span.style.width = span.dataset.width;
     });
   }
+
+  // * -----------------------------------------------
+
+  // * Increase Numbers Stats Section
+
+  if (window.scrollY >= statsSection.offsetTop) {
+    // started == false ===> !started
+    if (!started) {
+      nums.forEach((num) => {
+        startCount(num);
+      });
+    }
+    started = true;
+  }
 };
 
-// ---------------------------------------------------------
+// * scrolling button
+mySpan.onclick = function () {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth",
+  });
+};
 
-// Countdown Timer (Latest Shows Section)
+// * notes (Stats Section)
+// note: why i used the condition of if (!started)
+// bash mea ydaaar increase ghadi twliii started true so mghadiish yb9a kul shwiya f scroll ydaar increase of numbers
+
+// * ---------------------------------------------------------
+// * ---------------------------------------------------------
+
+// ! Countdown Timer (Latest Shows Section)
 
 // 1000 ms = 1 s
 
@@ -95,9 +139,10 @@ let counter = setInterval(() => {
   }
 }, 1000);
 
-// ---------------------------------------------------------
+// * ---------------------------------------------------------
+// * ---------------------------------------------------------
 
-// Change Video (Videos Section)
+// ! Change Video (Videos Section)
 
 let liVideo1 = document.getElementById("li-video1");
 let liVideo2 = document.getElementById("li-video2");
@@ -114,39 +159,5 @@ liVideo2.addEventListener("click", () => {
   mainVideo.src = "../videos/video_2.mp4";
 });
 
-// ---------------------------------------------------------
-
-// Increase Numbers (Stats Section)
-
-let nums = document.querySelectorAll(".stats .box .number");
-let statsSection = document.querySelector(".stats");
-let started = false;
-
-// main function
-function startCount(x) {
-  // goal => get the number from data-goal to stop in it
-  let goal = x.dataset.goal;
-  // count => setInterval()
-  let count = setInterval(() => {
-    x.textContent++;
-    if (x.textContent == goal) {
-      clearInterval(count);
-    }
-  }, 2000 / goal);
-  // 2000 / goal ==> try to fixed the duration of all number while the increase
-}
-
-window.onscroll = function () {
-  if (window.scrollY >= statsSection.offsetTop) {
-    // started == false ===> !started
-    if (!started) {
-      nums.forEach((num) => {
-        startCount(num);
-      });
-    }
-    started = true;
-  }
-};
-
-// note: why i used the condition of if (!started)
-// bash mea ydaaar increase ghadi twliii started true so mghadiish yb9a kul shwiya f scroll ydaar increase of numbers
+// * ---------------------------------------------------------
+// * ---------------------------------------------------------

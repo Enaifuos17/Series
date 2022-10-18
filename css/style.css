@@ -203,7 +203,7 @@ a {
   padding: 10px 8px;
   position: fixed;
   bottom: 10px;
-  right: 20px; /* !!!!!!! -40px */
+  right: -40px; /* ! -40px */
   /* border: 1px solid var(--dark); */
   border: none;
   border-top: 4px solid var(--navy-5);
@@ -2071,7 +2071,20 @@ a {
   justify-content: center;
   position: relative;
   z-index: 1;
+  animation: change-background 5s linear infinite;
 }
+
+/* * ANIMATION .image */
+@keyframes change-background {
+  0%,
+  100% {
+    background-image: url(../images/discount-background1.jpg);
+  }
+  50% {
+    background-image: url(../images//discount-background2.jpg);
+  }
+}
+/* * */
 
 .discount .image::before {
   content: "";
@@ -2084,11 +2097,75 @@ a {
   z-index: -1;
 }
 
+/* * respnsv */
+@media (max-width: 991px) {
+  .discount .image {
+    flex-basis: 100%;
+  }
+
+  .discount .image .content h2 {
+    font-size: 34px;
+  }
+}
+
 .discount .form {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-basis: 50%;
+}
+
+/* * respnsv */
+@media (max-width: 991px) {
+  .discount .form {
+    flex-basis: 100%;
+  }
+
+  .discount .form .content h2 {
+    font-size: 34px;
+  }
+}
+
+.discount .form .input {
+  display: block;
+  width: 100%;
+  margin-bottom: 25px;
+  padding: 15px;
+  border: none;
+  border-bottom: 1px solid #ccc;
+  background-color: #f9f9f9;
+  caret-color: var(--navy-11);
+  color: var(--navy-11);
+}
+
+.discount .form .input::placeholder {
+  color: var(--navy-11);
+}
+
+.discount .form textarea.input {
+  resize: none;
+  height: 170px;
+}
+
+.discount .form .input:focus {
+  outline: none;
+}
+
+.discount .form [type="submit"] {
+  display: block;
+  width: 100%;
+  padding: 12px;
+  background-color: var(--navy-8);
+  border: none;
+  font-weight: 600;
+  font-size: 20px;
+  color: #fff;
+  cursor: pointer;
+  transition: 0.2s linear;
+}
+
+.discount .form [type="submit"]:hover {
+  background-color: var(--navy-9);
 }
 
 /* both contents () */
@@ -2104,7 +2181,7 @@ a {
 }
 
 .discount .content p {
-  font-size: 18px;
+  font-size: 17px;
   max-width: 500px;
   line-height: 1.5;
 }
@@ -2115,3 +2192,9 @@ a {
 }
 
 /* End Discount */
+
+/* ----- ----- ----- ----- ----- */
+
+/* Start Footer */
+
+/* End Footer */
