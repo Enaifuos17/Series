@@ -2164,6 +2164,13 @@ a {
   transition: 0.2s linear;
 }
 
+/* * respnsv MOBILE */
+@media (max-width: 991px) {
+  .discount .form [type="submit"] {
+    margin-bottom: 10px;
+  }
+}
+
 .discount .form [type="submit"]:hover {
   background-color: var(--navy-9);
 }
@@ -2196,5 +2203,186 @@ a {
 /* ----- ----- ----- ----- ----- */
 
 /* Start Footer */
+
+.footer {
+  background-color: #191919;
+  padding: 70px 0 0;
+}
+
+/* * respnsv MOBILE */
+@media (max-width: 991px) {
+  .footer {
+    text-align: center;
+  }
+}
+
+.footer .container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 40px;
+}
+
+/* ? box 1 (social) */
+
+.footer .box h3 {
+  color: #fff;
+  font-size: 40px;
+  margin: 0 0 20px;
+}
+
+.footer .box .social {
+  display: flex;
+}
+
+/* * rspnsv MOBILE */
+@media (max-width: 991px) {
+  .footer .box .social {
+    justify-content: center;
+  }
+}
+
+.footer .box .social li {
+  margin-right: 10px;
+}
+
+.footer .box .social li a {
+  background-color: #313131;
+  color: #b9b9b9;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  font-size: 18px;
+  transition: 0.2s linear;
+  border-radius: 6px;
+}
+
+.footer .box .social li a.facebook:hover {
+  color: #fff;
+  background-color: #1877f2;
+}
+
+.footer .box .social li a.instagram:hover {
+  color: #fff;
+  background-color: #f56040;
+}
+
+.footer .box .social li a.linkedin:hover {
+  color: #fff;
+  background-color: #0077b5;
+}
+
+.footer .box .social li a.twitter:hover {
+  color: #fff;
+  background-color: #1da1f2;
+}
+
+.footer .box .text {
+  line-height: 1.9;
+  color: #b9b9b9;
+  font-size: 15px;
+}
+
+/* ? box 2 (links) */
+
+.footer .box .links li {
+  padding: 15px 0;
+  transition: 0.2s linear;
+}
+
+.footer .box .links li:not(:last-child) {
+  border-bottom: 1px solid #444;
+}
+
+.footer .box .links li:hover {
+  padding-left: 10px;
+}
+
+.footer .box .links li:hover a {
+  color: #fff;
+}
+
+.footer .box .links li a {
+  color: #b9b9b9;
+  transition: 0.2s linear;
+}
+
+.footer .box .links li a::before {
+  font-family: "Font Awesome 5 Free";
+  content: "\f101";
+  font-weight: 900;
+  margin-right: 10px;
+  color: var(--navy-8);
+  transition: 0.2s linear;
+}
+
+.footer .box .links li:hover a::before {
+  color: var(--navy-9);
+}
+
+/* ? box 3 (line) */
+
+.footer .box .line {
+  display: flex;
+  align-items: center;
+  color: #b9b9b9;
+  margin-bottom: 30px;
+}
+
+/* * repsnv */
+@media (max-width: 991px) {
+  .footer .box .line {
+    flex-direction: column;
+  }
+}
+
+.footer .box .line i {
+  color: var(--navy-8);
+  font-size: 25px;
+  margin-right: 10px;
+}
+
+/* * repsnv */
+@media (max-width: 991px) {
+  .footer .box .line i {
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+}
+
+.footer .box .line .info {
+  line-height: 1.6;
+  font-size: 15px;
+  flex: 1;
+}
+
+.footer .box .line span {
+  display: block;
+}
+/* about the span, to avoid */
+
+/* ? box 3 (gallery) */
+
+.footer .box.footer-gallery img {
+  width: 78px;
+  border: 3px solid #fff;
+  margin: 2px;
+}
+
+/* ? copyright */
+
+.footer .copyright {
+  padding: 25px 0;
+  text-align: center;
+  color: #fff;
+  margin: 50px 0 0;
+  border-top: 1px solid #444;
+  letter-spacing: 1.3px;
+}
+
+.footer .copyright span {
+  color: var(--navy-8);
+}
 
 /* End Footer */
