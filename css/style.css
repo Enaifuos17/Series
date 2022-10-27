@@ -1952,7 +1952,7 @@ a {
   justify-content: space-between;
 }
 
-.videos .container .holder .preview video {
+.videos .container .holder .preview img {
   max-width: 100%;
 }
 

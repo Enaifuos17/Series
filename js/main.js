@@ -144,20 +144,20 @@ let counter = setInterval(() => {
 
 // ! Change Video (Videos Section)
 
-let liVideo1 = document.getElementById("li-video1");
-let liVideo2 = document.getElementById("li-video2");
-let sourceVideo = document.getElementById("main-source");
-let mainVideo = document.getElementById("main-video");
+// let liVideo1 = document.getElementById("li-video1");
+// let liVideo2 = document.getElementById("li-video2");
+// let sourceVideo = document.getElementById("main-source");
+// let mainVideo = document.getElementById("main-video");
 
-console.log(mainVideo.src);
+// console.log(mainVideo.src);
 
-liVideo1.addEventListener("click", () => {
-  mainVideo.src = "../videos/video_1.mp4";
-});
+// liVideo1.addEventListener("click", () => {
+//   mainVideo.src = "../videos/video_1.mp4";
+// });
 
-liVideo2.addEventListener("click", () => {
-  mainVideo.src = "../videos/video_2.mp4";
-});
+// liVideo2.addEventListener("click", () => {
+//   mainVideo.src = "../videos/video_2.mp4";
+// });
 
 // * ---------------------------------------------------------
 // * ---------------------------------------------------------
